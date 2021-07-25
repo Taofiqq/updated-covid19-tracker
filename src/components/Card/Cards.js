@@ -1,6 +1,8 @@
 import React from 'react'
 import {Card, CardContent, Grid, Typography} from '@material-ui/core';
 import styles from './Card.module.css'
+import CountUp from 'react-countup'
+import cx from 'classnames'; 
 
 const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, TotalDeaths, NewDeaths, ActiveCases, Recovery_Proporation, Case_Fatality_Rate}}) => {
     if(!TotalCases) {
@@ -8,77 +10,134 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
     }
     return (
         <div className={styles.container}>
-           <Grid> 
-               <Grid item component={Card}>
+           <Grid container spacing={2} justifyContent="center"> 
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.totalCases)}>
                    <CardContent>
-                       <Typography>Total Cases</Typography>
-                       <Typography variant="h5">{TotalCases}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>Total Confirmed Cases</Typography>
+                       <Typography variant="h5">
+                          <CountUp 
+                          start={0}
+                          end={TotalCases}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography>Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.totalRecovered)}>
                    <CardContent>
-                       <Typography>Total Recovered</Typography>
-                       <Typography variant="h5">{TotalRecovered}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography gutterBottom>Total Recovered Cases</Typography>
+                       <Typography variant="h5"> 
+                       <CountUp 
+                          start={0}
+                          end={TotalRecovered}
+                          separator={","}
+                          /></Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography> People Recovered from COVID-19</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+
+                <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.totalDeaths)}>
                    <CardContent>
-                       <Typography>Total Deaths</Typography>
-                       <Typography variant="h5">{TotalDeaths}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>Total Deaths</Typography>
+                       <Typography variant="h5">
+                        <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                          </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+
+                <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.newCases)}>
                    <CardContent>
-                       <Typography>New Cases</Typography>
-                       <Typography variant="h5">{NewCases}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>New Cases</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.newRecovered)}>
                    <CardContent>
-                       <Typography>New Recovered</Typography>
-                       <Typography variant="h5">{NewRecovered}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography gutterBottom>New Recovered Cases</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.newDeaths)}>
                    <CardContent>
-                       <Typography>NewDeaths</Typography>
-                       <Typography variant="h5">{NewDeaths}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>New Deaths Cases</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography>Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.activeCases)}>
                    <CardContent>
-                       <Typography>ActiveCases</Typography>
-                       <Typography variant="h5">{ActiveCases}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>Active Cases</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.caseFertility)}>
                    <CardContent>
-                       <Typography>Recovery_Proporation</Typography>
-                       <Typography variant="h5">{Recovery_Proporation}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography gutterBottom>Case Fertility Rate</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
-               <Grid item component={Card}>
+               <Grid item component={Card} xs={12} md={4} className={cx(styles.card, styles.recoveryProporation)}>
                    <CardContent>
-                       <Typography>Case_Fatality_Rate</Typography>
-                       <Typography variant="h5">{Case_Fatality_Rate}</Typography>
-                       <Typography color="textSecondary">Real Date</Typography>
-                       <Typography color="textSecondary">Current covid cases</Typography>
+                       <Typography  gutterBottom>Recovery Proporation</Typography>
+                       <Typography variant="h5">
+                       <CountUp 
+                          start={0}
+                          end={TotalDeaths}
+                          separator={","}
+                          />
+                       </Typography>
+                       <Typography >Real Date</Typography>
+                       <Typography >Number of Total Covid-19 Cases</Typography>
                    </CardContent>
                </Grid>
            </Grid>
