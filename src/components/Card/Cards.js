@@ -61,7 +61,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={NewCases}
                           separator={","}
                           />
                        </Typography>
@@ -76,7 +76,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={NewRecovered}
                           separator={","}
                           />
                        </Typography>
@@ -90,7 +90,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={NewDeaths}
                           separator={","}
                           />
                        </Typography>
@@ -104,7 +104,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={ActiveCases}
                           separator={","}
                           />
                        </Typography>
@@ -118,7 +118,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={Case_Fatality_Rate}
                           separator={","}
                           />
                        </Typography>
@@ -132,7 +132,7 @@ const Cards = ({data: {TotalCases, NewCases, TotalRecovered, NewRecovered, Total
                        <Typography variant="h5">
                        <CountUp 
                           start={0}
-                          end={TotalDeaths}
+                          end={Recovery_Proporation}
                           separator={","}
                           />
                        </Typography>
